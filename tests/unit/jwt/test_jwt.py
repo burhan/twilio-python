@@ -264,4 +264,4 @@ class JwtTest(unittest.TestCase):
         decoded_jwt = Jwt.from_jwt(jwt.to_jwt())
         self.assertEqual(decoded_jwt.issuer, 'issuer')
         self.assertEqual(decoded_jwt.payload['get'], 'rekt')
-        self.assertIsNone(decoded_jwt.secret_key)
+        self.assertEqual(decoded_jwt.secret_key, '')

@@ -98,9 +98,8 @@ class Jwt(object):
             raise ValueError('JWT does not have a signing key configured.')
 
         headers = self.headers.copy()
-        if algorithm:
-            headers['alg'] = algorithm
         algorithm = algorithm or self.algorithm
+        headers['alg'] = algorithm
 
         payload = self.payload.copy()
         if ttl:
@@ -124,8 +123,7 @@ class Jwt(object):
             print(jwt)
             print(type(jwt))
 
-            # jwtStr = jwt.decode('utf-8')
-            jwtStr = jwt
+            jwtStr = jwt.decode('utf-8')
 
             print(jwtStr)
             print(type(jwtStr))
