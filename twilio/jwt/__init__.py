@@ -124,7 +124,8 @@ class Jwt(object):
             print(jwt)
             print(type(jwt))
 
-            jwtStr = jwt.decode('utf-8')
+            # jwtStr = jwt.decode('utf-8')
+            jwtStr = jwt
 
             print(jwtStr)
             print(type(jwtStr))

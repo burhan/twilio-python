@@ -261,7 +261,7 @@ class JwtTest(unittest.TestCase):
 
     def test_decode_allows_skip_verification(self):
         jwt = DummyJwt('secret', 'issuer', payload={'get': 'rekt'})
-        decoded_jwt = Jwt.from_jwt(jwt.to_jwt(), key=None)
+        decoded_jwt = Jwt.from_jwt(jwt.to_jwt())
         self.assertEqual(decoded_jwt.issuer, 'issuer')
         self.assertEqual(decoded_jwt.payload['get'], 'rekt')
         self.assertIsNone(decoded_jwt.secret_key)
