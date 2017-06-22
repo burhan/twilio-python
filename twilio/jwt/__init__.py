@@ -124,7 +124,12 @@ class Jwt(object):
             print(jwt)
             print(type(jwt))
 
-            payload = jwt_lib.decode(jwt, key, verify=verify, options={
+            jwtStr = jwt.decode('utf-8')
+
+            print(jwtStr)
+            print(type(jwtStr))
+
+            payload = jwt_lib.decode(jwtStr, key, verify=verify, options={
                 'verify_signature': True,
                 'verify_exp': True,
                 'verify_nbf': True,
